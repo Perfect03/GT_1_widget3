@@ -10,11 +10,11 @@ void Figura::move(float Alpha,QPainter *Painter)
 }
 void MyLine::draw(QPainter *Painter)
 {
-    Painter->drawLine(x+dx,y+dy,x-dx,y-dy);
+    Painter->drawLine(x+dx,y+dy,x-dx,y-dy); // вызов функции рисования через метод move базового класса
 }
 void MyRect::draw(QPainter *Painter)
 {
-    Painter->drawLine(x+dx,y+dy,x+dy,y-dx);
+    Painter->drawLine(x+dx,y+dy,x+dy,y-dx); // аналогично, только у квадрата 4 линии
     Painter->drawLine(x+dy,y-dx,x-dx,y-dy);
     Painter->drawLine(x-dx,y-dy,x-dy,y+dx);
     Painter->drawLine(x-dy,y+dx,x+dx,y+dy);

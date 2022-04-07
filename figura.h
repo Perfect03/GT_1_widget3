@@ -14,16 +14,16 @@
 class Figura
 {
 protected:
-    int x,y,halflen,dx,dy,r;
-    virtual void draw(QPainter *Painter)=0;
+    int x,y,halflen,dx,dy,r; // координаты
+    virtual void draw(QPainter *Painter)=0; // метод рисования
 
 public:
     Figura(int X,int Y,int Halflen):
     x(X),y(Y),halflen(Halflen){}
-    void move(float Alpha,QPainter *Painter);
+    void move(float Alpha,QPainter *Painter); // метод поворота
 };
 
-class MyLine:public Figura
+class MyLine:public Figura // для линии
 {
 protected:
     void draw(QPainter *Painter);
@@ -32,7 +32,7 @@ public:
     MyLine(int x,int y,int halflen):Figura(x,y,halflen){}
 };
 
-class MyRect:public Figura
+class MyRect:public Figura // для круга
 {
 protected:
     void draw(QPainter *Painter);
