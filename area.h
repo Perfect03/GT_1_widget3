@@ -12,17 +12,17 @@
 #include <QValidator>
 #include <QWidget>
 
-class Area : public QWidget
+class Area : public QWidget // область прорисовки
 {
-    int myTimer; // идентификатор таймера
+    int myTimer; // таймер
     float alpha; // угол поворота
 public:
-    Area(QWidget *parent = 0);
+    Area(QWidget *parent = 0); // конструктор и деструктор
     ~Area();
-    MyLine *myline;
+    MyLine *myline; // определение линии и квадрата
     MyRect *myrect;
 protected:
-// обработчики событий
+// обработчики событий для начала рисования, начала, считывания и уничтожения таймера
     void paintEvent(QPaintEvent *event);
     void timerEvent(QTimerEvent *event);
     void showEvent(QShowEvent *event);
